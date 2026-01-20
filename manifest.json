@@ -1,5 +1,5 @@
 {
-  "name": "제물포권 영무궁화 챌린지",
+  "name": "제물포 영무궁화 챌린지",
   "short_name": "영무궁화",
   "start_url": "./index.html",
   "display": "standalone",
@@ -19,3 +19,4 @@
     }
   ]
 }
+
