@@ -1,10 +1,12 @@
 {
-  "name": "영무궁화 챌린지",
+  "name": "제물포권 영무궁화 챌린지",
   "short_name": "영무궁화",
   "start_url": "/index002.html",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1976d2",
+
   "icons": [
     {
       "src": "/icon-192.png",
