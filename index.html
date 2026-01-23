@@ -28,12 +28,6 @@ body{
   background-size:40px 40px;
 }
 
-/* 영어만 굵게 (OK 제외) */
-.eng-bold{
-  font-family:"맑은 고딕", sans-serif;
-  font-weight:900;
-}
-
 /* 제목 영역 */
 .title-wrap{
   position:relative;
@@ -45,6 +39,7 @@ body{
   font-family:'Poor Story', cursive;
   font-size:16px;
   font-weight:bold;
+  white-space:nowrap;
 }
 
 .shift-up{ margin-top:-8px; }
@@ -110,7 +105,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#000; /* 🔥 모바일 하얀칸 방지 */
+  color:#000; /* 모바일 하얀칸 방지 */
 }
 
 .text-box{
@@ -178,33 +173,35 @@ body{
 
 <script>
 const missions=[
- ["스마일 <span class='eng-bold'>DAY</span>","가족에게","3가지 칭찬하기"],
- ["창제 <span class='eng-bold'>DAY</span>","평소","창제시간에<br>+10분"],
- ["오.운.완.","오늘 운동 완료","(산책, 스트레칭)<br>OK"], // OK 얇게
+ ["스마일 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","가족에게","3가지 칭찬하기"],
+ ["창제 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","평소","창제시간에<br>+10분"],
+ ["오.운.완.","오늘 운동 완료","(산책, 스트레칭)<br>OK"], // OK는 얇게
  ["땡스 투 ♡","오늘 감사한 일","3가지 적어보기"],
- ["<span class='eng-bold'>SDG's DAY</span>","오늘 일회용품","사용금지"],
- ["'나'를 위한 <span class='eng-bold'>DAY</span>","나 자신","칭찬해주기"],
- ["우호 <span class='eng-bold'>DAY</span>","칸나활동","실천"],
- ["좌담회 <span class='eng-bold'>DAY</span>","'나의청년' 및","좌담회 참석"],
- ["우호 <span class='eng-bold'>DAY</span>","영무궁화에게","스피치 전하기"],
- ["승리 <span class='eng-bold'>DAY</span>","오늘 하루","승리하기"],
- ["허그 <span class='eng-bold'>DAY</span>","사랑하는 가족","안아주기"],
- ["'나'를 위한 <span class='eng-bold'>DAY</span>","오늘 인스턴트","안 먹기"],
- ["도전 <span class='eng-bold'>DAY</span>","하기 싫은 일","도전"],
- ["해방 <span class='eng-bold'>DAY</span>","오늘 하루","잔소리 금지"],
- ["영무궁화 <span class='eng-bold'>DAY</span>","선배와 함께","활동하기"],
- ["사제 <span class='eng-bold'>DAY</span>","신인간혁명","읽기"]
+ ["<b style='font-family:맑은 고딕;font-weight:900;'>SDG's DAY</b>","오늘 일회용품","사용금지"],
+ ["'나'를 위한 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","나 자신","칭찬해주기"],
+ ["우호 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","칸나활동","실천"],
+ ["좌담회 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","'나의청년' 및","좌담회 참석"],
+ ["우호 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","영무궁화에게","스피치 전하기"],
+ ["승리 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","오늘 하루","승리하기"],
+ ["허그 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","사랑하는 가족","안아주기"],
+ ["'나'를 위한 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","오늘 인스턴트","안 먹기"],
+ ["도전 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","하기 싫은 일","도전"],
+ ["해방 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","오늘 하루","잔소리 금지"],
+ ["영무궁화 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","선배와 함께","활동하기"],
+ ["사제 <b style='font-family:맑은 고딕;font-weight:900;'>DAY</b>","신인간혁명","읽기"]
 ];
 
 const grid=document.getElementById("grid");
+
 missions.forEach(arr=>{
   const cell=document.createElement("div");
   cell.className="cell";
-  cell.innerHTML=`<div class="text-box">
-    <div class="title">${arr[0]}</div>
-    <div class="subline">${arr[1]}</div>
-    <div class="third">${arr[2]}</div>
-  </div>`;
+  cell.innerHTML=`
+    <div class="text-box">
+      <div class="title">${arr[0]}</div>
+      <div class="subline">${arr[1]}</div>
+      <div class="third">${arr[2]}</div>
+    </div>`;
   grid.appendChild(cell);
 });
 </script>
